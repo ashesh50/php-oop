@@ -1,8 +1,12 @@
 <?php
 
 class Human{
+    public $name;
     function sayHi(){
         echo "Salam\n";
+    }
+    function getName(){
+
     }
 }
 
@@ -19,9 +23,11 @@ class Dog{
 }
 
 $h1 = new Human();
+$h1-> name = "Raki\n";
 $ci = new Cat();
 $di = new Dog();
 
 $h1 -> sayHi();
-$ci -> sayHi();
-$di -> sayHi();
+echo $h1->name;
+// $ci -> sayHi();
+// $di -> sayHi();
