@@ -4,9 +4,10 @@ class Human{
     public $name;
     function sayHi(){
         echo "Salam\n";
+        $this -> sayName();
     }
-    function getName(){
-
+    function sayName(){
+        echo "My name is {$this -> name}";
     }
 }
 
@@ -23,11 +24,18 @@ class Dog{
 }
 
 $h1 = new Human();
-$h1-> name = "Raki\n";
-$ci = new Cat();
-$di = new Dog();
+$h2 = new Human();
+$h1-> name = "Raki\n"; //set
+$h2-> name = "Rahul"; //set
+// $ci = new Cat();
+// $di = new Dog();
 
 $h1 -> sayHi();
-echo $h1->name;
+// $h1->sayName();
+// echo $h1->name; //get
 // $ci -> sayHi();
 // $di -> sayHi();
+
+$h2 -> sayHi();
+// $h2->sayName();
+// echo $h2->name;
