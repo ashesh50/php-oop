@@ -6,46 +6,47 @@ class RGB{
     private $green;
     private $blue;
 
-    function __construct($colorCode = ''){
+    public function __construct($colorCode = ''){
         $this->color = ltrim($colorCode, "#");
         $this->parseColor();
     }
 
-    function getRGBColor(){
+    public function getColor(){
+        return $this->color;
+    }
+
+    public function getRGBColor(){
         return array($this->red, $this->green, $this->blue);
     }
 
-    function readRGBColor(){
+    public function readRGBColor(){
         echo "Red: {$this->red},\nGreen: {$this->green},\nBlue: {$this->blue}\n";
     }
 
-    function setColor($colorCode){
+    public function setColor($colorCode){
         $this->color = ltrim($colorCode, "#");
         $this->parseColor();
     }
 
     private function parseColor(){
         if($this->color){
-            list($this->red, $this->green, $this->blue) =
-                sscanf($this->color, '%02x%02x%02x');
+            list($this->red, $this->green, $this->blue) = sscanf($this->color, '%02x%02x%02x');
         }else{
-            $this->red = 0;
-            $this->green = 0;
-            $this->blue = 0;
+            list($this->red, $this->green, $this->blue) = array(0, 0, 0);
         }
     }
 
-    function getRed(){
+    public function getRed(){
         return $this->red;
     }
-    function getGreen(){
+    public function getGreen(){
         return $this->green;
     }
-    function getBlue(){
+    public function getBlue(){
         return $this->blue;
     }
 }
 
 $myColor = new RGB("#00ff00");
 $myColor->readRGBColor();
-echo $myColor->getGreen();
+echo $myColor->getBlue();
